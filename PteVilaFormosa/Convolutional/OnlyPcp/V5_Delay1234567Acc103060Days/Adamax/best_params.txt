@@ -1,0 +1,5 @@
+{'activation_input': 'linear', 'filter': 16, 'kernel': 50, 'hidden_conv_layers': 2, 'hidden_n_layers': 2, 'add_drop': False, 'activation_output': 'linear', 'learning_rate': 0.01, 'batch_size': 10, 'epochs': 350, 'activation_input_conv_hid': 'linear', 'hidden_input_nodes': 100, 'activation_input_den_hid': 'relu', 'drop_value': 0.1}
+NSE: 0.40974456444563134
+R2: 0.746758564100392
+PBIAS: -87.82931527265019
+RMSE: 36.16798654923075

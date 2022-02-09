@@ -1,0 +1,5 @@
+{'input_nodes': 8, 'hidden_n_layers': 1, 'activation_output': 'softsign', 'learning_rate': 0.01, 'batch_size': 10, 'epochs': 200}
+NSE: 0.4024779590800308
+R2: 0.8141931687033043
+PBIAS: 37.62145434412709
+RMSE: 36.19426289261828

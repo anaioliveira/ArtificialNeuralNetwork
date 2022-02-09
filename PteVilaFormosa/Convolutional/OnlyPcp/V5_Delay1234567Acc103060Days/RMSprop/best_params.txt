@@ -1,0 +1,5 @@
+{'activation_input': 'relu', 'filter': 64, 'kernel': 100, 'hidden_conv_layers': 1, 'hidden_n_layers': 0, 'add_drop': False, 'activation_output': 'linear', 'learning_rate': 0.01, 'batch_size': 50, 'epochs': 400, 'hidden_input_nodes': 50, 'activation_input_den_hid': 'softsign', 'drop_value': 0.2, 'activation_input_conv_hid': 'relu'}
+NSE: 0.3654313096261478
+R2: 0.6797972664489528
+PBIAS: -51.94526718237506
+RMSE: 37.50106962340354

@@ -1,0 +1,5 @@
+{'activation_input': 'elu', 'filter': 64, 'kernel': 1, 'hidden_conv_layers': 0, 'hidden_n_layers': 1, 'add_drop': False, 'activation_output': 'linear', 'learning_rate': 0.01, 'batch_size': 50, 'epochs': 300, 'hidden_input_nodes': 50, 'activation_input_den_hid': 'linear', 'drop_value': 0.1, 'activation_input_conv_hid': 'linear'}
+NSE: -0.29977777075153833
+R2: 0.2318583370809962
+PBIAS: -43.82995362424636
+RMSE: 54.17501978924037
