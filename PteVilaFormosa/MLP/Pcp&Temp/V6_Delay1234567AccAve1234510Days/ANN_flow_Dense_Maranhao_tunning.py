@@ -17,10 +17,9 @@ accumulate_values = True #True or False
 average_values = True #True or False
 delay_values = True #True or False
 
-accumulate_periods = [[fin_var_in1, 10,30,60]]
-average_periods = [[fin_var_in2, 10,30,60]]
-delay_periods = [[fin_var_in1, 1,2,3,4,5,6,7],\
-                 [fin_var_in2, 1,2,3,4,5,6,7]]
+accumulate_periods = [[fin_var_in1, 2,3,4,5,10]]
+average_periods = [[fin_var_in2, 2,3,4,5,10]]
+delay_periods = [[fin_var_in1, 1, 2, 3, 4, 5, 6, 7], [fin_var_in2, 1, 2, 3, 4, 5, 6, 7]]
 
 
 ############################################################################################
@@ -75,7 +74,7 @@ y_validation = np.reshape(y_validation, (-1,1))
 y_test = y_dataset_scale[train_size+val_size:, :]
 y_test = np.reshape(y_test, (-1,1))
 
-optim=['Nadam', 'Adamax', 'RMSprop', 'Adam', 'Adagrad', 'SGD'] #
+optim=['Nadam', 'Adamax', 'RMSprop', 'Adam', 'Adagrad', 'SGD'] #'Nadam', 'Adamax', 'RMSprop', 'Adam', 'Adagrad', 
 
 current_dir = os.getcwd()
 
@@ -121,6 +120,7 @@ for op in optim:
     stats=plot(y_train_validation, y_test, predictions)
     
     fin = open(current_dir+'/'+case_study+'/'+'best_params.txt', 'w')
+    fin.write('Train, validation, test sizes: '+str(y_train.shape)+str(y_validation.shape)+str(y_test.shape)+'\n')
     fin.write(str(params)+'\n')
     fin.writelines('NSE: '+str(stats[0])+'\n'+'R2: '+str(stats[1])+'\n'+'PBIAS: '+str(stats[2])+'\n'+'RMSE: '+str(stats[3])+'\n')
     fin.close()

@@ -1,0 +1,6 @@
+Train, validation, test sizes: (1845, 1)(527, 1)(264, 1)
+{'filter': 8, 'kernel': 10, 'hidden_conv_layers': 1, 'hidden_n_layers': 0, 'add_drop': False, 'activation_output': 'elu', 'epsilon': 1e-07, 'batch_size': 30, 'epochs': 300, 'filter_others': 16, 'kernel_others': 8, 'hidden_input_nodes': 10, 'activation_input_den_hid': 'linear', 'drop_value': 0.1}
+NSE: 0.39229086012215997
+R2: 0.5327230655153711
+PBIAS: 4.532719353737007
+RMSE: 36.69883002975949

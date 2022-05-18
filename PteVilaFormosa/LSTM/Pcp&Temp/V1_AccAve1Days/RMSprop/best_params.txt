@@ -1,0 +1,6 @@
+Train, validation, test sizes: (1, 1851, 1)(1, 529, 1)(265, 1)
+{'input_nodes': 16, 'hidden_n_lstm_layers': 0, 'epsilon': 1e-08, 'batch_size': 20, 'epochs': 250}
+NSE: 0.5876764044659988
+R2: 0.6123480072345661
+PBIAS: -17.95070566023431
+RMSE: 30.512909447392236

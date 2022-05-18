@@ -1,5 +1,6 @@
-{'activation_input': 'linear', 'input_nodes': 16, 'drop_1': False, 'hidden_n_layers': 0, 'activation_output': 'softsign', 'learning_rate': 0.01, 'batch_size': 50, 'epochs': 200, 'hidden_input_nodes': 16, 'activation_hidden': 'softsign', 'drop_2': True, 'drop_value_2': 0.2, 'drop_value_1': 0.1}
-NSE: -0.353553567992148
-R2: 0.38333024898695706
-PBIAS: -23.869506755860943
-RMSE: 55.28435537566985
+Train, validation, test sizes: (1846, 1)(527, 1)(265, 1)
+{'activation_input': 'linear', 'input_nodes': 16, 'drop_1': True, 'hidden_n_layers': 0, 'activation_output': 'linear', 'epsilon': 1e-08, 'batch_size': 10, 'epochs': 200, 'drop_value_1': 0.1, 'hidden_input_nodes': 6, 'activation_hidden': 'softsign', 'drop_2': False, 'drop_value_2': 0.1}
+NSE: -0.5863367603529892
+R2: 0.24225857338984227
+PBIAS: -56.30124088917901
+RMSE: 59.84973339678857

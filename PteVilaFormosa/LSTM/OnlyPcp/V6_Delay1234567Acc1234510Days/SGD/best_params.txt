@@ -1,5 +1,6 @@
-{'input_nodes': 8, 'hidden_n_layers': 0, 'activation_output': 'relu', 'learning_rate': 0.0001, 'batch_size': 1, 'epochs': 100}
-NSE: 0.3136540143389601
-R2: 0.6686592608495738
-PBIAS: -44.05230947444351
-RMSE: 39.00101268645912
+Train, validation, test sizes: (1, 1845, 1)(1, 527, 1)(264, 1)
+{'input_nodes': 32, 'hidden_n_lstm_layers': 0, 'learning_rate': 0.01, 'batch_size': 50, 'epochs': 400}
+NSE: 0.4646411134714957
+R2: 0.6896694352488771
+PBIAS: -37.60074301924827
+RMSE: 34.44505186070257

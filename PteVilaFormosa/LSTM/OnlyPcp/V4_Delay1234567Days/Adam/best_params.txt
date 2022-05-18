@@ -1,5 +1,0 @@
-{'input_nodes': 32, 'hidden_n_layers': 0, 'activation_output': 'relu', 'learning_rate': 0.001, 'batch_size': 10, 'epochs': 150}
-NSE: 0.6132157141348769
-R2: 0.6417324028575561
-PBIAS: 5.778093258345192
-RMSE: 29.55282055216484

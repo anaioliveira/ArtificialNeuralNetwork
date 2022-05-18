@@ -48,7 +48,8 @@ def build_model_Adam(hp):
     model.add(Dense(1, activation=hp_act_l3))
     
     hp_learning_rate = hp.Choice('learning_rate', values=[1e-4, 1e-3, 1e-2])
-    model.compile(optimizer=Adam(lr=hp_learning_rate), loss='mean_squared_error', metrics=['mean_squared_error'])
+    hp_epsilon = hp.Choice('epsilon', values=[1e-7, 1e-8])
+    model.compile(optimizer=Adam(lr=hp_learning_rate, epsilon=hp_epsilon, ), loss='mean_squared_error', metrics=['mean_squared_error'])
 
     return model
 
@@ -83,7 +84,7 @@ def build_model_SGD(hp):
     model.add(Dense(1, activation=hp_act_l3))
     
     hp_learning_rate = hp.Choice('learning_rate', values=[1e-4, 1e-3, 1e-2])
-    model.compile(optimizer=SGD(lr=hp_learning_rate), loss='mean_squared_error', metrics=['mean_squared_error'])
+    model.compile(optimizer=SGD(lr=hp_learning_rate, momentum=0.9, nesterov=True), loss='mean_squared_error', metrics=['mean_squared_error'])
 
     return model
 
@@ -118,7 +119,8 @@ def build_model_Nadam(hp):
     model.add(Dense(1, activation=hp_act_l3))
     
     hp_learning_rate = hp.Choice('learning_rate', values=[1e-4, 1e-3, 1e-2])
-    model.compile(optimizer=Nadam(lr=hp_learning_rate), loss='mean_squared_error', metrics=['mean_squared_error'])
+    hp_epsilon = hp.Choice('epsilon', values=[1e-7, 1e-8])
+    model.compile(optimizer=Nadam(lr=hp_learning_rate, epsilon=hp_epsilon, ), loss='mean_squared_error', metrics=['mean_squared_error'])
 
     return model
 
@@ -152,8 +154,9 @@ def build_model_Adagrad(hp):
     hp_act_l3 = hp.Choice('activation_output', values=['softsign', 'linear'])
     model.add(Dense(1, activation=hp_act_l3))
     
-    hp_learning_rate = hp.Choice('learning_rate', values=[1e-4, 1e-3, 1e-2])
-    model.compile(optimizer=Adagrad(lr=hp_learning_rate), loss='mean_squared_error', metrics=['mean_squared_error'])
+    #hp_learning_rate = hp.Choice('learning_rate', values=[1e-4, 1e-3, 1e-2])
+    hp_epsilon = hp.Choice('epsilon', values=[1e-7, 1e-8])
+    model.compile(optimizer=Adagrad(lr=0.01, epsilon=hp_epsilon), loss='mean_squared_error', metrics=['mean_squared_error'])
 
     return model
 
@@ -187,8 +190,9 @@ def build_model_RMSprop(hp):
     hp_act_l3 = hp.Choice('activation_output', values=['softsign', 'linear'])
     model.add(Dense(1, activation=hp_act_l3))
     
-    hp_learning_rate = hp.Choice('learning_rate', values=[1e-4, 1e-3, 1e-2])
-    model.compile(optimizer=RMSprop(lr=hp_learning_rate), loss='mean_squared_error', metrics=['mean_squared_error'])
+    #hp_learning_rate = hp.Choice('learning_rate', values=[1e-4, 1e-3, 1e-2])
+    hp_epsilon = hp.Choice('epsilon', values=[1e-7, 1e-8])
+    model.compile(optimizer=RMSprop(lr=0.01, epsilon=hp_epsilon), loss='mean_squared_error', metrics=['mean_squared_error'])
 
     return model
 
@@ -223,7 +227,8 @@ def build_model_Adamax(hp):
     model.add(Dense(1, activation=hp_act_l3))
     
     hp_learning_rate = hp.Choice('learning_rate', values=[1e-4, 1e-3, 1e-2])
-    model.compile(optimizer=Adamax(lr=hp_learning_rate), loss='mean_squared_error', metrics=['mean_squared_error'])
+    hp_epsilon = hp.Choice('epsilon', values=[1e-7, 1e-8])
+    model.compile(optimizer=Adamax(lr=hp_learning_rate, epsilon=hp_epsilon, ), loss='mean_squared_error', metrics=['mean_squared_error'])
 
     return model
 
@@ -233,7 +238,7 @@ def tuner(case_study, x_train, y_train, x_validation, y_validation, opt):
     
     global x_train_aux
     x_train_aux = x_train
-    n_trials=1000
+    n_trials=500
     
     if opt == 'Adam':
         # run model with Adam
@@ -293,7 +298,7 @@ def tuner(case_study, x_train, y_train, x_validation, y_validation, opt):
         print ('Keras optimizer not defined!')
         sys.exit()
 
-    stop_early = tf.keras.callbacks.EarlyStopping(monitor='val_mean_squared_error', patience=5)
+    stop_early = tf.keras.callbacks.EarlyStopping(monitor='val_mean_squared_error', patience=3)
     tuner.search(x_train, y_train, validation_data=(x_validation, y_validation), callbacks=[stop_early], verbose=0, use_multiprocessing=True, workers=10)
 
     # Get the optimal hyperparameters

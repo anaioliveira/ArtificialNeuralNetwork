@@ -17,9 +17,9 @@ accumulate_values = False #True or False
 average_values = False #True or False
 delay_values = True #True or False
 
-accumulate_periods = [[fin_var_in1, 10,30,60]]
+accumulate_periods = [[fin_var_in1, 2, 3, 4, 5, 10]]
 average_periods = []
-delay_periods = [[fin_var_in1, 1,2,3,4,5,6,7]]
+delay_periods = [[fin_var_in1, 1, 2, 3, 4, 5, 6, 7]]
 
 
 ############################################################################################
@@ -66,21 +66,19 @@ x_train = x_dataset_scale[:train_size, :]
 x_validation = x_dataset_scale[train_size:train_size+val_size, :]
 x_test = x_dataset_scale[train_size+val_size:, :]
 
+
 x_train = x_train.reshape(1, x_train.shape[0], x_train.shape[1])
 x_validation = x_validation.reshape(1, x_validation.shape[0], x_validation.shape[1])
 x_test = x_test.reshape(1, x_test.shape[0], x_test.shape[1])
 
 #divide forecasted property into train, validation and test datasets and reshape
 y_train = y_dataset_scale[:train_size, :]
-#y_train = np.reshape(y_train, (-1,1))
 y_train = y_train.reshape(1, y_train.shape[0], 1)
 y_validation = y_dataset_scale[train_size:train_size+val_size, :]
-#y_validation = np.reshape(y_validation, (-1,1))
 y_validation = y_validation.reshape(1, y_validation.shape[0], 1)
 y_test = y_dataset_scale[train_size+val_size:, :]
-#y_test = np.reshape(y_test, (-1,1))
 
-optim=['Adam', 'Nadam', 'Adamax', 'RMSprop', 'Adagrad', 'SGD'] #
+optim=['Nadam', 'Adamax', 'RMSprop', 'Adam', 'Adagrad', 'SGD'] #'Nadam', 'Adamax', 'RMSprop', 'Adam', 'Adagrad', 
 
 current_dir = os.getcwd()
 
@@ -127,6 +125,7 @@ for op in optim:
     stats=plot(y_train_validation, y_test, predictions)
     
     fin = open(current_dir+'/'+case_study+'/'+'best_params.txt', 'w')
+    fin.write('Train, validation, test sizes: '+str(y_train.shape)+str(y_validation.shape)+str(y_test.shape)+'\n')
     fin.write(str(params)+'\n')
     fin.writelines('NSE: '+str(stats[0])+'\n'+'R2: '+str(stats[1])+'\n'+'PBIAS: '+str(stats[2])+'\n'+'RMSE: '+str(stats[3])+'\n')
     fin.close()

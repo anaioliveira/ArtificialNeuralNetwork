@@ -1,5 +1,6 @@
-{'activation_input': 'linear', 'filter': 32, 'kernel': 100, 'hidden_conv_layers': 1, 'hidden_n_layers': 0, 'add_drop': False, 'activation_output': 'linear', 'learning_rate': 0.01, 'batch_size': 40, 'epochs': 250, 'activation_input_conv_hid': 'relu', 'hidden_input_nodes': 30, 'activation_input_den_hid': 'linear', 'drop_value': 0.0}
-NSE: -0.14511397301764495
-R2: 0.61192197626069
-PBIAS: -23.194280895776103
-RMSE: 50.84975713970323
+Train, validation, test sizes: (1846, 1)(527, 1)(265, 1)
+{'filter': 8, 'kernel': 10, 'hidden_conv_layers': 2, 'hidden_n_layers': 0, 'add_drop': False, 'activation_output': 'linear', 'learning_rate': 0.01, 'epsilon': 1e-07, 'batch_size': 20, 'epochs': 250, 'filter_others': 16, 'kernel_others': 8, 'hidden_input_nodes': 3, 'activation_input_den_hid': 'softsign', 'drop_value': 0.1}
+NSE: 0.022484242170369373
+R2: 0.6056314701764357
+PBIAS: -32.01294052558908
+RMSE: 46.981449260472644

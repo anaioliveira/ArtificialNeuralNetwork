@@ -1,5 +1,0 @@
-{'activation_input': 'relu', 'input_nodes': 26, 'drop_1': True, 'hidden_n_layers': 0, 'activation_output': 'linear', 'learning_rate': 0.01, 'batch_size': 10, 'epochs': 100, 'hidden_input_nodes': 26, 'activation_hidden': 'softsign', 'drop_2': False, 'drop_value_2': 0.2, 'drop_value_1': 0.1}
-NSE: 0.1346678443785878
-R2: 0.3666052413215715
-PBIAS: -0.9280538342780815
-RMSE: 43.7920984211304

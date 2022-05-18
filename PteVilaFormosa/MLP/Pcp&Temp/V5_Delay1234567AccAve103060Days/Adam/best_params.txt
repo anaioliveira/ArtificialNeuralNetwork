@@ -1,5 +1,0 @@
-{'activation_input': 'linear', 'input_nodes': 5, 'drop_1': False, 'hidden_n_layers': 1, 'activation_output': 'softsign', 'learning_rate': 0.01, 'batch_size': 10, 'epochs': 300, 'drop_value_1': 0.1, 'hidden_input_nodes': 3, 'activation_hidden': 'elu', 'drop_2': False, 'drop_value_2': 0.1}
-NSE: 0.47083929012399484
-R2: 0.630761374940654
-PBIAS: -51.271856952312845
-RMSE: 34.24507566738694

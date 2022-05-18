@@ -1,5 +1,6 @@
-{'input_nodes': 16, 'hidden_n_layers': 0, 'activation_output': 'softsign', 'learning_rate': 0.01, 'batch_size': 10, 'epochs': 200}
-NSE: 0.5315558716774338
-R2: 0.7134174125886658
-PBIAS: -62.75075577599488
-RMSE: 32.047316644502935
+Train, validation, test sizes: (1, 1809, 1)(1, 517, 1)(259, 1)
+{'input_nodes': 32, 'hidden_n_lstm_layers': 0, 'learning_rate': 0.01, 'epsilon': 1e-08, 'batch_size': 40, 'epochs': 150}
+NSE: 0.6177070075426339
+R2: 0.7548001929820508
+PBIAS: 8.144610851769228
+RMSE: 28.95082474122883
